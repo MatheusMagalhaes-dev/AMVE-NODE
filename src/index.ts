@@ -1,24 +1,24 @@
-import express from 'express';
-import cors from 'cors';
+import express from "express";
+import cors from "cors";
 
 //Config
-import { connect, environment} from './config';
+import { connect, environment } from "./config";
 
 // Routes
-import routes from './routes';
+import routes from "./routes";
 
-const app = express ();
-app.use(express.urlencoded({extended: true}));
+const app = express();
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json);
 app.use(cors());
 
 // Routes
-app.use('/api', routes);
+app.use("/api", routes);
 
 (async () => {
-    await connect();
+  await connect();
 
-    app.listen(environment.PORT, () => {
-        console.log(`Server hosted on http://localhost:${environment.PORT}`);
-    });
+  app.listen(environment.PORT, () => {
+    console.log(`Server hosted on http://localhost:${environment.PORT}`);
+  });
 })();

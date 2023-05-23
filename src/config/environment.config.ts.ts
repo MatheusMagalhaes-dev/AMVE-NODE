@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 
-import type { TEnvironment } from '@ts';
+import type { TEnvironment } from "../ts";
 
 dotenv.config();
 
@@ -13,6 +13,6 @@ export const environment: TEnvironment = {
 
     DATABASE_USER: process.env.DATABASE_USER || '',
     DATABASE_PASS: process.env.DATABASE_PASS || '',
-    
-    
-}
+    DATABASE_HOST: process.env.DATABASE_HOST || '',
+    DATABASE_NAME: process.env.DATABASE_NAME || '',
+};

@@ -25,4 +25,17 @@ export const updateUserSchema = z.object({
     }),
 });
 
-export const updateUserPasswordSchema = z.object({})
+export const updateUserPasswordSchema = z.object({
+    body: z.object({
+        password: z.string().min(6).max(20),
+    }),
+    params: z.object({
+        id: z.custom(isValidObjectId),
+    }),
+});
+
+export const deleteUserSchema = z.object({
+    params: z.object({
+        id: z.custom(isValidObjectId),
+    }),
+});

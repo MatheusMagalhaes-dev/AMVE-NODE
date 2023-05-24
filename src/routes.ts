@@ -9,6 +9,6 @@ const routes = Router();
 
 // Routes
 
-routes.use("/users", authMiddleware, UserController);
+routes.use("/users", UserController);
 
 export default routes;
